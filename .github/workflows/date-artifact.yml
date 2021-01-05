@@ -1,0 +1,20 @@
+name: build tiny artifact
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-tiny-artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Compress published files
+        run:  |
+          date > date.txt
+          zip -rT app.zip date.txt
+        
+      - uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: app.zip
