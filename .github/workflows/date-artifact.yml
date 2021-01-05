@@ -1,3 +1,4 @@
+# As small as we can do it.
 name: build tiny artifact
 
 on:
