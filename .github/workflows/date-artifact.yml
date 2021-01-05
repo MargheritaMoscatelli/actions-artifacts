@@ -1,9 +1,8 @@
-# As small as we can do it.
 name: build tiny artifact
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build-tiny-artifact:
