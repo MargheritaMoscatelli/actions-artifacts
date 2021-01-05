@@ -2,7 +2,8 @@ name: build tiny artifact
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - '*'
 
 jobs:
   build-tiny-artifact:
