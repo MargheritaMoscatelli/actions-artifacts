@@ -9,12 +9,13 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Compress published files
+      - name: Save date to file to go in app.zip artifact
         run:  |
           date > date.txt
           zip -rT app.zip date.txt
         
       - uses: actions/upload-artifact@v2
+        name: Upload app.zip
         with:
           name: artifact
           path: app.zip
