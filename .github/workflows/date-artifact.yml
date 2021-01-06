@@ -14,7 +14,8 @@ jobs:
         run:  |
           date > date.txt
           zip -rT app.zip date.txt
-        
+
+      # https://github.com/actions/upload-artifact/blob/main/README.md
       - uses: actions/upload-artifact@v2
         name: Upload app.zip
         with:

@@ -1,0 +1,1 @@
+"https://api.github.com/repos/tandeday/odin-api-foundation/actions/artifacts/33960077/zip"
