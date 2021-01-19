@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Save date to file to go in app.zip artifact - https://stackoverflow.com/a/65698504/53897
         run:  |
-          echo "<configuration><ApplicationVersion><GitBranch>${{ github.head_ref }}</GitBranch><GitCommitHash>${{ github.sha }}</GitCommitHash></ApplicationVersion></configuration>"
-          echo "<configuration><ApplicationVersion><GitBranch>${{ github.head_ref }}</GitBranch><GitCommitHash>${{ github.sha }}</GitCommitHash></ApplicationVersion></configuration>" > version.xml
+          echo "<configuration><ApplicationVersion><GitBranch>${{ github.ref }}</GitBranch><GitCommitHash>${{ github.sha }}</GitCommitHash></ApplicationVersion></configuration>"
+          echo "<configuration><ApplicationVersion><GitBranch>${{ github.ref }}</GitBranch><GitCommitHash>${{ github.sha }}</GitCommitHash></ApplicationVersion></configuration>" > version.xml
           date > date.txt
           # zip -rT app.zip date.txt version.xml
           # zip is not available in github windows runners - 7z command found in https://patriksvensson.se/2020/03/creating-release-artifacts-with-github-actions/
