@@ -1,0 +1,7 @@
+<configuration>
+    <ApplicationVersion>
+        <GitBranch>local-dev-branch</GitBranch>
+        <GitCommitHash>local-dev-commit</GitCommitHash>
+    </ApplicationVersion>
+</configuration>
+
