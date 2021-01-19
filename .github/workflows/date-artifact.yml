@@ -10,9 +10,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Save date to file to go in app.zip artifact
+      - name: Save date to file to go in app.zip artifact - https://stackoverflow.com/a/65698504/53897
         run:  |
-          echo "<configuration><ApplicationVersion><GitBranch%GITHUB_REF%</GitBranch><GitCommitHash>%GITHUB_SHA%</GitCommitHash></ApplicationVersion></configuration>"
+          echo "<configuration><ApplicationVersion><GitBranch>${{ github.head_ref }}</GitBranch><GitCommitHash>${{ github.sha }}</GitCommitHash></ApplicationVersion></configuration>"
           echo '<configuration><ApplicationVersion><GitBranch>%GITHUB_REF%</GitBranch><GitCommitHash>%GITHUB_SHA%</GitCommitHash></ApplicationVersion></configuration>' > version.xml
           date > date.txt
           # zip -rT app.zip date.txt version.xml
