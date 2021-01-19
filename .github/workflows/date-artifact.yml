@@ -13,6 +13,7 @@ jobs:
       - name: Save date to file to go in app.zip artifact
         run:  |
           date > date.txt
+          export >> date.txt
           zip -rT app.zip date.txt
 
       # https://github.com/actions/upload-artifact/blob/main/README.md
