@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Save date to file to go in app.zip artifact
         run:  |
-          echo '<configuration><ApplicationVersion><GitBranch%GITHUB_REF%</GitBranch><GitCommitHash>%GITHUB_SHA%</GitCommitHash></ApplicationVersion></configuration>'
+          echo "<configuration><ApplicationVersion><GitBranch%GITHUB_REF%</GitBranch><GitCommitHash>%GITHUB_SHA%</GitCommitHash></ApplicationVersion></configuration>"
           echo '<configuration><ApplicationVersion><GitBranch>%GITHUB_REF%</GitBranch><GitCommitHash>%GITHUB_SHA%</GitCommitHash></ApplicationVersion></configuration>' > version.xml
           date > date.txt
           # zip -rT app.zip date.txt version.xml
