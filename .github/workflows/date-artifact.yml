@@ -44,3 +44,6 @@ jobs:
         with:
           name: artifact
           path: app.zip
+          run:  |
+            a="https://api.github.com/repos/tandeday/actions-artifacts/actions/runs?branch=main | jq -r '. | .workflow_runs[0].artifacts_url '"
+            echo ${{a}}
