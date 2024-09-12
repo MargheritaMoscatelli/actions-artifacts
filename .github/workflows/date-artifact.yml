@@ -1,7 +1,7 @@
 name: build tiny artifact
 
 on:
-  push:
+  push: 
     branches:
       - '*'
 
